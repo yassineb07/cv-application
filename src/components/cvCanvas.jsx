@@ -1,13 +1,9 @@
 import '/src/styles/cvCanvas.css';
 
-const CvCanvas = ({ userData }) => {
-  const personalInfo = userData.personalInfo;
-  const education = userData.education;
-  const experience = userData.experience;
-
+const CvCanvas = ({ personalInfo, education, experience }) => {
   const educationItems = education.map((item) => {
     return (
-      <div>
+      <div key={item.id}>
         <div className="flexcol">
           <p>
             {item.start} - {item.end}{' '}
@@ -15,7 +11,7 @@ const CvCanvas = ({ userData }) => {
           <p>{item.location}</p>
         </div>
         <div className="flexcol">
-          <p>{item.univName}</p>
+          <p>{item.school}</p>
           <p>{item.degree}</p>
         </div>
       </div>
@@ -24,7 +20,7 @@ const CvCanvas = ({ userData }) => {
 
   const experienceItems = experience.map((item) => {
     return (
-      <div>
+      <div key={item.id}>
         <div className="flexcol">
           <p>
             {item.start} - {item.end}{' '}
@@ -32,7 +28,7 @@ const CvCanvas = ({ userData }) => {
           <p>{item.location}</p>
         </div>
         <div className="flexcol">
-          <p>{item.companyName}</p>
+          <p>{item.company}</p>
           <p>{item.position}</p>
         </div>
       </div>
@@ -42,7 +38,7 @@ const CvCanvas = ({ userData }) => {
   return (
     <div className="canvas">
       <section className="personalInfo">
-        <h1 className="name">{personalInfo.name}</h1>
+        <h1 className="name">{personalInfo.fullName}</h1>
         <p>{personalInfo.job}</p>
         <div className="info">
           <p>{personalInfo.email}</p>

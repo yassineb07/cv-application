@@ -1,14 +1,25 @@
 import Input from './input';
 
-const PersonalInfo = () => {
+const PersonalInfo = ({ onChange }) => {
   return (
     <div>
       <h1>Personal Details</h1>
       <form action="" method="get">
-        <Input id={'fullName'} type={'text'} label={'Full Name'} />
-        <Input id={'email'} type={'email'} label={'Email'} />
-        <Input id={'phone'} type={'tel'} label={'Phone Number'} />
-        <Input id={'address'} type={'text'} label={'Address'} />
+        <Input name={'fullName'} label={'Full Name'} onChange={onChange} />
+        <Input
+          name={'email'}
+          type={'email'}
+          label={'Email'}
+          onChange={onChange}
+        />
+        <Input
+          name={'phone'}
+          type={'tel'}
+          label={'Phone Number'}
+          onChange={onChange}
+        />
+        <Input name={'address'} label={'Address'} onChange={onChange} />
+
         <button type="submit">save</button>
       </form>
     </div>

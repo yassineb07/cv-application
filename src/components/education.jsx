@@ -1,17 +1,35 @@
 import Input from './input';
 
-const Education = () => {
+const Education = ({ educationList, onChange }) => {
+  const educationItems = educationList.map((item) => {
+    return (
+      <div id={item.id} key={item.id}>
+        <form action="" method="get">
+          <Input name={'school'} label={'School'} onChange={onChange} />
+          <Input name={'degree'} label={'Degree'} onChange={onChange} />
+          <Input
+            name={'start'}
+            type={'date'}
+            label={'Start Date'}
+            onChange={onChange}
+          />
+          <Input
+            name={'end'}
+            type={'date'}
+            label={'End Date'}
+            onChange={onChange}
+          />
+          <Input name={'location'} label={'Location'} onChange={onChange} />
+          <button type="submit">save</button>
+        </form>
+      </div>
+    );
+  });
+
   return (
     <div>
       <h1>Education</h1>
-      <form action="" method="get">
-        <Input id={'school'} type={'text'} label={'School'} />
-        <Input id={'degree'} type={'text'} label={'Degree'} />
-        <Input id={'startDate'} type={'date'} label={'Start Date'} />
-        <Input id={'endDate'} type={'date'} label={'End Date'} />
-        <Input id={'location'} type={'text'} label={'Location'} />
-        <button type="submit">save</button>
-      </form>
+      {educationItems}
     </div>
   );
 };

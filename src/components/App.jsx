@@ -1,10 +1,13 @@
 import '/src/styles/App.css';
-import CvCustom from './cvCustom';
 import CvCanvas from './cvCanvas';
+import PersonalInfo from './personalInfo';
+import Education from './education';
+import Experience from './experience';
+import { useState } from 'react';
 
-const userData = {
+const userDataExample = {
   personalInfo: {
-    name: 'john doe',
+    fullName: 'john doe',
     job: 'software engineer',
     email: 'john@doe',
     phone: '555 555 555',
@@ -12,7 +15,8 @@ const userData = {
   },
   education: [
     {
-      univName: 'london uni',
+      id: crypto.randomUUID(),
+      school: 'london uni',
       location: 'london',
       degree: 'cs',
       start: '2/9/2018',
@@ -21,7 +25,8 @@ const userData = {
   ],
   experience: [
     {
-      companyName: 'google',
+      id: crypto.randomUUID(),
+      company: 'google',
       location: 'california',
       position: 'engineer',
       start: '2020',
@@ -31,10 +36,53 @@ const userData = {
 };
 
 function App() {
+  const [personalInfo, setPersonalInfo] = useState(
+    userDataExample.personalInfo
+  );
+  const [education, setEducation] = useState(userDataExample.education);
+  const [experience, setExperience] = useState(userDataExample.experience);
+
+  const handlePersonalChange = (e) => {
+    setPersonalInfo({ ...personalInfo, [e.target.name]: e.target.value });
+  };
+
+  const handleEducationChange = (e) => {
+    const newEducation = education.map((item) => {
+      if (e.target.parentElement.parentElement.parentElement.id === item.id) {
+        return { ...item, [e.target.name]: e.target.value };
+      } else {
+        return item;
+      }
+    });
+    setEducation(newEducation);
+  };
+
+  const handleExperienceChange = (e) => {
+    const newExperience = experience.map((item) => {
+      if (e.target.parentElement.parentElement.parentElement.id === item.id) {
+        return { ...item, [e.target.name]: e.target.value };
+      } else {
+        return item;
+      }
+    });
+    setExperience(newExperience);
+  };
+
   return (
     <div className="app">
-      <CvCustom />
-      <CvCanvas userData={userData} />
+      <div className="userInput">
+        <PersonalInfo onChange={handlePersonalChange} />
+        <Education educationList={education} onChange={handleEducationChange} />
+        <Experience
+          experienceList={experience}
+          onChange={handleExperienceChange}
+        />
+      </div>
+      <CvCanvas
+        personalInfo={personalInfo}
+        education={education}
+        experience={experience}
+      />
     </div>
   );
 }
