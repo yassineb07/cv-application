@@ -1,10 +1,29 @@
+import { useState } from 'react';
 import Input from './input';
+import ListItem from './listItem';
 
 const Experience = ({ experienceList, onChange }) => {
-  const experienceItems = experienceList.map((item) => {
+  const [activeIndex, setActiveIndex] = useState(-1);
+
+  const experienceItems = experienceList.map((item, index) => {
     return (
-      <div id={item.id} key={item.id}>
-        <form action="" method="get">
+      <ListItem
+        key={item.id}
+        id={item.id}
+        name={item.company}
+        isActive={activeIndex === index}
+        onShow={() => {
+          setActiveIndex(index);
+        }}
+      >
+        <form
+          action=""
+          method="get"
+          onSubmit={(e) => {
+            e.preventDefault();
+            setActiveIndex(-1);
+          }}
+        >
           <Input name={'company'} label={'Company Name'} onChange={onChange} />
           <Input name={'position'} label={'Position'} onChange={onChange} />
           <Input
@@ -22,7 +41,7 @@ const Experience = ({ experienceList, onChange }) => {
           <Input name={'location'} label={'Location'} onChange={onChange} />
           <button type="submit">save</button>
         </form>
-      </div>
+      </ListItem>
     );
   });
 
@@ -30,6 +49,7 @@ const Experience = ({ experienceList, onChange }) => {
     <div>
       <h1>Work Experience</h1>
       {experienceItems}
+      <button>Add Experience</button>
     </div>
   );
 };
