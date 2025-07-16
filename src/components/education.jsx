@@ -1,10 +1,29 @@
+import { useState } from 'react';
 import Input from './input';
+import ListItem from './listItem';
 
 const Education = ({ educationList, onChange }) => {
-  const educationItems = educationList.map((item) => {
+  const [activeIndex, setActiveIndex] = useState(-1);
+
+  const educationItems = educationList.map((item, index) => {
     return (
-      <div id={item.id} key={item.id}>
-        <form action="" method="get">
+      <ListItem
+        key={item.id}
+        id={item.id}
+        name={item.school}
+        isActive={activeIndex === index}
+        onShow={() => {
+          setActiveIndex(index);
+        }}
+      >
+        <form
+          action=""
+          method="get"
+          onSubmit={(e) => {
+            e.preventDefault();
+            setActiveIndex(-1);
+          }}
+        >
           <Input name={'school'} label={'School'} onChange={onChange} />
           <Input name={'degree'} label={'Degree'} onChange={onChange} />
           <Input
@@ -22,7 +41,7 @@ const Education = ({ educationList, onChange }) => {
           <Input name={'location'} label={'Location'} onChange={onChange} />
           <button type="submit">save</button>
         </form>
-      </div>
+      </ListItem>
     );
   });
 
@@ -30,6 +49,7 @@ const Education = ({ educationList, onChange }) => {
     <div>
       <h1>Education</h1>
       {educationItems}
+      <button>Add School</button>
     </div>
   );
 };
