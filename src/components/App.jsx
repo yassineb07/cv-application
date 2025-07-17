@@ -57,6 +57,21 @@ function App() {
     setEducation(newEducation);
   };
 
+  const handleEducationAdd = () => {
+    console.log('add button');
+    setEducation([
+      ...education,
+      {
+        id: crypto.randomUUID(),
+        school: '',
+        location: '',
+        degree: '',
+        start: '',
+        end: '',
+      },
+    ]);
+  };
+
   const handleExperienceChange = (e) => {
     const newExperience = experience.map((item) => {
       if (e.target.parentElement.parentElement.parentElement.id === item.id) {
@@ -72,7 +87,11 @@ function App() {
     <div className="app">
       <div className="userInput">
         <PersonalInfo onChange={handlePersonalChange} />
-        <Education educationList={education} onChange={handleEducationChange} />
+        <Education
+          educationList={education}
+          onChange={handleEducationChange}
+          onClick={handleEducationAdd}
+        />
         <Experience
           experienceList={experience}
           onChange={handleExperienceChange}

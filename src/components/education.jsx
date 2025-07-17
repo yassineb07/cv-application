@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Input from './input';
 import ListItem from './listItem';
 
-const Education = ({ educationList, onChange }) => {
+const Education = ({ educationList, onChange, onClick }) => {
   const [activeIndex, setActiveIndex] = useState(-1);
 
   const educationItems = educationList.map((item, index) => {
@@ -49,7 +49,14 @@ const Education = ({ educationList, onChange }) => {
     <div>
       <h1>Education</h1>
       {educationItems}
-      <button>Add School</button>
+      <button
+        onClick={() => {
+          onClick();
+          setActiveIndex(educationList.length);
+        }}
+      >
+        Add School
+      </button>
     </div>
   );
 };
