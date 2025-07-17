@@ -58,7 +58,6 @@ function App() {
   };
 
   const handleEducationAdd = () => {
-    console.log('add button');
     setEducation([
       ...education,
       {
@@ -83,6 +82,20 @@ function App() {
     setExperience(newExperience);
   };
 
+  const handleExperienceAdd = () => {
+    setExperience([
+      ...experience,
+      {
+        id: crypto.randomUUID(),
+        company: '',
+        location: '',
+        position: '',
+        start: '',
+        end: '',
+      },
+    ]);
+  };
+
   return (
     <div className="app">
       <div className="userInput">
@@ -95,6 +108,7 @@ function App() {
         <Experience
           experienceList={experience}
           onChange={handleExperienceChange}
+          onClick={handleExperienceAdd}
         />
       </div>
       <CvCanvas

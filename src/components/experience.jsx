@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Input from './input';
 import ListItem from './listItem';
 
-const Experience = ({ experienceList, onChange }) => {
+const Experience = ({ experienceList, onChange, onClick }) => {
   const [activeIndex, setActiveIndex] = useState(-1);
 
   const experienceItems = experienceList.map((item, index) => {
@@ -49,7 +49,14 @@ const Experience = ({ experienceList, onChange }) => {
     <div>
       <h1>Work Experience</h1>
       {experienceItems}
-      <button>Add Experience</button>
+      <button
+        onClick={() => {
+          onClick();
+          setActiveIndex(experienceList.length);
+        }}
+      >
+        Add Experience
+      </button>
     </div>
   );
 };
