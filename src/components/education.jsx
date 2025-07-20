@@ -46,7 +46,7 @@ const Education = ({ educationList, onChange, onClick }) => {
   });
 
   return (
-    <div>
+    <div className="cv-section">
       <h1>Education</h1>
       {educationItems}
       <button

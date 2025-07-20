@@ -2,7 +2,7 @@ import Input from './input';
 
 const PersonalInfo = ({ onChange }) => {
   return (
-    <div>
+    <div className="cv-section">
       <h1>Personal Details</h1>
       <form action="" method="get">
         <Input name={'fullName'} label={'Full Name'} onChange={onChange} />
@@ -19,8 +19,6 @@ const PersonalInfo = ({ onChange }) => {
           onChange={onChange}
         />
         <Input name={'address'} label={'Address'} onChange={onChange} />
-
-        <button type="submit">save</button>
       </form>
     </div>
   );

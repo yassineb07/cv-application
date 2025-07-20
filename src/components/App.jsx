@@ -98,7 +98,7 @@ function App() {
 
   return (
     <div className="app">
-      <div className="userInput">
+      <div className="cv-edit">
         <PersonalInfo onChange={handlePersonalChange} />
         <Education
           educationList={education}
