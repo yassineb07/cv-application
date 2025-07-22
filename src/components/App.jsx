@@ -16,6 +16,7 @@ const userDataExample = {
   education: [
     {
       id: crypto.randomUUID(),
+      hidden: false,
       school: 'london uni',
       location: 'london',
       degree: 'cs',
@@ -26,6 +27,7 @@ const userDataExample = {
   experience: [
     {
       id: crypto.randomUUID(),
+      hidden: false,
       company: 'google',
       location: 'california',
       position: 'engineer',
@@ -62,6 +64,7 @@ function App() {
       ...education,
       {
         id: crypto.randomUUID(),
+        hidden: false,
         school: '',
         location: '',
         degree: '',
@@ -77,6 +80,17 @@ function App() {
         (item) => item.id !== e.target.parentElement.parentElement.id
       )
     );
+  };
+
+  const handleEducationHide = (e) => {
+    const newEducation = education.map((item) => {
+      if (item.id === e.target.parentElement.parentElement.id) {
+        return { ...item, hidden: item.hidden ? false : true };
+      } else {
+        return item;
+      }
+    });
+    setEducation(newEducation);
   };
 
   const handleExperienceChange = (e) => {
@@ -121,6 +135,7 @@ function App() {
           onChange={handleEducationChange}
           onAdd={handleEducationAdd}
           onRemove={handleEducationRemove}
+          onHide={handleEducationHide}
         />
         <Experience
           experienceList={experience}

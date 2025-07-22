@@ -1,6 +1,6 @@
 const CvCanvas = ({ personalInfo, education, experience }) => {
   const educationItems = education.map((item) => {
-    return (
+    return item.hidden ? null : (
       <div className="item" key={item.id}>
         <div className="flex-col">
           <p>
