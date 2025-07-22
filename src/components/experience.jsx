@@ -24,21 +24,38 @@ const Experience = ({ experienceList, onChange, onClick }) => {
             setActiveIndex(-1);
           }}
         >
-          <Input name={'company'} label={'Company Name'} onChange={onChange} />
-          <Input name={'position'} label={'Position'} onChange={onChange} />
+          <Input
+            name={'company'}
+            value={item.company}
+            label={'Company Name'}
+            onChange={onChange}
+          />
+          <Input
+            name={'position'}
+            value={item.position}
+            label={'Position'}
+            onChange={onChange}
+          />
           <Input
             name={'start'}
+            value={item.start}
             type={'date'}
             label={'Start Date'}
             onChange={onChange}
           />
           <Input
             name={'end'}
+            value={item.end}
             type={'date'}
             label={'End Date'}
             onChange={onChange}
           />
-          <Input name={'location'} label={'Location'} onChange={onChange} />
+          <Input
+            name={'location'}
+            value={item.location}
+            label={'Location'}
+            onChange={onChange}
+          />
           <button type="submit">save</button>
         </form>
       </ListItem>

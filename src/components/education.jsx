@@ -24,21 +24,38 @@ const Education = ({ educationList, onChange, onClick }) => {
             setActiveIndex(-1);
           }}
         >
-          <Input name={'school'} label={'School'} onChange={onChange} />
-          <Input name={'degree'} label={'Degree'} onChange={onChange} />
+          <Input
+            name={'school'}
+            value={item.school}
+            label={'School'}
+            onChange={onChange}
+          />
+          <Input
+            name={'degree'}
+            value={item.degree}
+            label={'Degree'}
+            onChange={onChange}
+          />
           <Input
             name={'start'}
+            value={item.start}
             type={'date'}
             label={'Start Date'}
             onChange={onChange}
           />
           <Input
             name={'end'}
+            value={item.end}
             type={'date'}
             label={'End Date'}
             onChange={onChange}
           />
-          <Input name={'location'} label={'Location'} onChange={onChange} />
+          <Input
+            name={'location'}
+            value={item.location}
+            label={'Location'}
+            onChange={onChange}
+          />
           <button type="submit">save</button>
         </form>
       </ListItem>

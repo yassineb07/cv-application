@@ -99,7 +99,7 @@ function App() {
   return (
     <div className="app">
       <div className="cv-edit">
-        <PersonalInfo onChange={handlePersonalChange} />
+        <PersonalInfo values={personalInfo} onChange={handlePersonalChange} />
         <Education
           educationList={education}
           onChange={handleEducationChange}
