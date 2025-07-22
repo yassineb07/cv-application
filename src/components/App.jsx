@@ -77,14 +77,15 @@ function App() {
   const handleEducationRemove = (e) => {
     setEducation(
       education.filter(
-        (item) => item.id !== e.target.parentElement.parentElement.id
+        (item) =>
+          item.id !== e.target.parentElement.parentElement.parentElement.id
       )
     );
   };
 
   const handleEducationHide = (e) => {
     const newEducation = education.map((item) => {
-      if (item.id === e.target.parentElement.parentElement.id) {
+      if (item.id === e.target.parentElement.parentElement.parentElement.id) {
         return { ...item, hidden: item.hidden ? false : true };
       } else {
         return item;
@@ -121,14 +122,15 @@ function App() {
   const handleExperienceRemove = (e) => {
     setExperience(
       experience.filter(
-        (item) => item.id !== e.target.parentElement.parentElement.id
+        (item) =>
+          item.id !== e.target.parentElement.parentElement.parentElement.id
       )
     );
   };
 
   const handleExperienceHide = (e) => {
     const newExperience = experience.map((item) => {
-      if (item.id === e.target.parentElement.parentElement.id) {
+      if (item.id === e.target.parentElement.parentElement.parentElement.id) {
         return { ...item, hidden: item.hidden ? false : true };
       } else {
         return item;
