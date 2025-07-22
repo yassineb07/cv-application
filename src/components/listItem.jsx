@@ -2,22 +2,24 @@ const Item = ({ title, onRemove, onHide }) => {
   return (
     <div className="item-closed">
       <h2>{title}</h2>
-      <button
-        onClick={(e) => {
-          e.stopPropagation();
-          onHide(e);
-        }}
-      >
-        H
-      </button>
-      <button
-        onClick={(e) => {
-          e.stopPropagation();
-          onRemove(e);
-        }}
-      >
-        X
-      </button>
+      <div className="buttons">
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            onHide(e);
+          }}
+        >
+          H
+        </button>
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            onRemove(e);
+          }}
+        >
+          X
+        </button>
+      </div>
     </div>
   );
 };
