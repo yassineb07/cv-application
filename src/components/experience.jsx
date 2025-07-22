@@ -39,14 +39,12 @@ const Experience = ({ experienceList, onChange, onClick }) => {
           <Input
             name={'start'}
             value={item.start}
-            type={'date'}
             label={'Start Date'}
             onChange={onChange}
           />
           <Input
             name={'end'}
             value={item.end}
-            type={'date'}
             label={'End Date'}
             onChange={onChange}
           />
