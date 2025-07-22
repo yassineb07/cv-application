@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Input from './input';
 import ListItem from './listItem';
 
-const Experience = ({ experienceList, onChange, onAdd, onRemove }) => {
+const Experience = ({ experienceList, onChange, onAdd, onRemove, onHide }) => {
   const [activeIndex, setActiveIndex] = useState(-1);
 
   const experienceItems = experienceList.map((item, index) => {
@@ -16,6 +16,7 @@ const Experience = ({ experienceList, onChange, onAdd, onRemove }) => {
           setActiveIndex(index);
         }}
         onRemove={onRemove}
+        onHide={onHide}
       >
         <form
           action=""

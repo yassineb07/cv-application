@@ -126,6 +126,17 @@ function App() {
     );
   };
 
+  const handleExperienceHide = (e) => {
+    const newExperience = experience.map((item) => {
+      if (item.id === e.target.parentElement.parentElement.id) {
+        return { ...item, hidden: item.hidden ? false : true };
+      } else {
+        return item;
+      }
+    });
+    setExperience(newExperience);
+  };
+
   return (
     <div className="app">
       <div className="cv-edit">
@@ -142,6 +153,7 @@ function App() {
           onChange={handleExperienceChange}
           onAdd={handleExperienceAdd}
           onRemove={handleExperienceRemove}
+          onHide={handleExperienceHide}
         />
       </div>
       <CvCanvas
