@@ -8,7 +8,7 @@ import { useState } from 'react';
 const userDataExample = {
   personalInfo: {
     fullName: 'john doe',
-    job: 'software engineer',
+    position: 'software engineer',
     email: 'john@doe',
     phone: '555 555 555',
     address: 'address',

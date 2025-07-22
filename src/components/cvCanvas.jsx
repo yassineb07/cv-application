@@ -37,7 +37,7 @@ const CvCanvas = ({ personalInfo, education, experience }) => {
     <div className="cv-canvas">
       <section className="personal-info">
         <h1 className="name">{personalInfo.fullName}</h1>
-        <p>{personalInfo.job}</p>
+        <p>{personalInfo.position}</p>
         <div className="info">
           <p>{personalInfo.email}</p>
           <p>{personalInfo.phone}</p>

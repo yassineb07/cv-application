@@ -12,6 +12,12 @@ const PersonalInfo = ({ values, onChange }) => {
           onChange={onChange}
         />
         <Input
+          name={'position'}
+          value={values.position}
+          label={'Position'}
+          onChange={onChange}
+        />
+        <Input
           name={'email'}
           value={values.email}
           type={'email'}
