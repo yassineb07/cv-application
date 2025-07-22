@@ -50,6 +50,12 @@
   margin-bottom: 1rem;
 }
 
+.item-closed {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 /* cv canvas  */
 
 .cv-canvas {

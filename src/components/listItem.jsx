@@ -1,6 +1,6 @@
 const Item = ({ title, onRemove }) => {
   return (
-    <div>
+    <div className="item-closed">
       <h2>{title}</h2>
       <button
         onClick={(e) => {
