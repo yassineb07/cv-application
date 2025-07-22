@@ -73,7 +73,9 @@ function App() {
 
   const handleEducationRemove = (e) => {
     setEducation(
-      education.filter((item) => item.id !== e.target.parentElement.id)
+      education.filter(
+        (item) => item.id !== e.target.parentElement.parentElement.id
+      )
     );
   };
 
@@ -104,7 +106,9 @@ function App() {
 
   const handleExperienceRemove = (e) => {
     setExperience(
-      experience.filter((item) => item.id !== e.target.parentElement.id)
+      experience.filter(
+        (item) => item.id !== e.target.parentElement.parentElement.id
+      )
     );
   };
 

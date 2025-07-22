@@ -1,6 +1,6 @@
 const Item = ({ title, onRemove }) => {
   return (
-    <>
+    <div>
       <h2>{title}</h2>
       <button
         onClick={(e) => {
@@ -10,7 +10,7 @@ const Item = ({ title, onRemove }) => {
       >
         X
       </button>
-    </>
+    </div>
   );
 };
 
