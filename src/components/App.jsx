@@ -102,6 +102,12 @@ function App() {
     ]);
   };
 
+  const handleExperienceRemove = (e) => {
+    setExperience(
+      experience.filter((item) => item.id !== e.target.parentElement.id)
+    );
+  };
+
   return (
     <div className="app">
       <div className="cv-edit">
@@ -115,7 +121,8 @@ function App() {
         <Experience
           experienceList={experience}
           onChange={handleExperienceChange}
-          onClick={handleExperienceAdd}
+          onAdd={handleExperienceAdd}
+          onRemove={handleExperienceRemove}
         />
       </div>
       <CvCanvas
