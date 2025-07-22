@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Input from './input';
 import ListItem from './listItem';
 
-const Education = ({ educationList, onChange, onClick }) => {
+const Education = ({ educationList, onChange, onAdd, onRemove }) => {
   const [activeIndex, setActiveIndex] = useState(-1);
 
   const educationItems = educationList.map((item, index) => {
@@ -15,6 +15,7 @@ const Education = ({ educationList, onChange, onClick }) => {
         onShow={() => {
           setActiveIndex(index);
         }}
+        onRemove={onRemove}
       >
         <form
           action=""
@@ -66,7 +67,7 @@ const Education = ({ educationList, onChange, onClick }) => {
       {educationItems}
       <button
         onClick={() => {
-          onClick();
+          onAdd();
           setActiveIndex(educationList.length);
         }}
       >

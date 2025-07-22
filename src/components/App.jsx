@@ -71,6 +71,12 @@ function App() {
     ]);
   };
 
+  const handleEducationRemove = (e) => {
+    setEducation(
+      education.filter((item) => item.id !== e.target.parentElement.id)
+    );
+  };
+
   const handleExperienceChange = (e) => {
     const newExperience = experience.map((item) => {
       if (e.target.parentElement.parentElement.parentElement.id === item.id) {
@@ -103,7 +109,8 @@ function App() {
         <Education
           educationList={education}
           onChange={handleEducationChange}
-          onClick={handleEducationAdd}
+          onAdd={handleEducationAdd}
+          onRemove={handleEducationRemove}
         />
         <Experience
           experienceList={experience}
