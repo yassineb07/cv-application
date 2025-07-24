@@ -1,3 +1,5 @@
+import CvSection from './cvSection';
+
 const CvCanvas = ({ personalInfo, education, experience }) => {
   const educationItems = education.map((item) => {
     return item.hidden ? null : (
@@ -44,14 +46,16 @@ const CvCanvas = ({ personalInfo, education, experience }) => {
           <p>{personalInfo.address}</p>
         </div>
       </section>
-      <section className="education">
-        <h2 className="title">Education</h2>
-        {educationItems}
-      </section>
-      <section className="experience">
-        <h2 className="title">Work Experience</h2>
-        {experienceItems}
-      </section>
+      <CvSection
+        className="education"
+        title={'Education'}
+        list={educationItems}
+      />
+      <CvSection
+        className="experience"
+        title={'Work Experience'}
+        list={experienceItems}
+      />
     </div>
   );
 };
