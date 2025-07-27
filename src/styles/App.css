@@ -88,9 +88,18 @@
   display: flex;
   justify-content: space-around;
 }
+.info > * {
+  display: flex;
+  gap: 0.2rem;
+  font-size: 1.2rem;
+}
+.job-title {
+  font-size: 1.2rem;
+}
 
 .title {
-  text-align: center;
+  display: flex;
+  gap: 0.3rem;
   background-color: rgba(0, 0, 0, 0.068);
 }
 
