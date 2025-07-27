@@ -17,6 +17,7 @@ const Education = ({ educationList, onChange, onAdd, onRemove, onHide }) => {
         }}
         onRemove={onRemove}
         onHide={onHide}
+        hidden={item.hidden}
       >
         <form
           action=""

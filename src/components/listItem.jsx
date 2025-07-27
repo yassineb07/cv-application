@@ -1,4 +1,7 @@
-const Item = ({ title, onRemove, onHide }) => {
+import Icon from '@mdi/react';
+import { mdiDeleteOutline, mdiEyeOutline, mdiEyeOffOutline } from '@mdi/js';
+
+const Item = ({ title, onRemove, onHide, hidden }) => {
   return (
     <div className="item-closed">
       <h2>{title}</h2>
@@ -9,7 +12,19 @@ const Item = ({ title, onRemove, onHide }) => {
             onHide(e);
           }}
         >
-          H
+          {hidden ? (
+            <Icon
+              path={mdiEyeOffOutline}
+              size={1}
+              style={{ pointerEvents: 'none' }}
+            />
+          ) : (
+            <Icon
+              path={mdiEyeOutline}
+              size={1}
+              style={{ pointerEvents: 'none' }}
+            />
+          )}
         </button>
         <button
           onClick={(e) => {
@@ -17,7 +32,11 @@ const Item = ({ title, onRemove, onHide }) => {
             onRemove(e);
           }}
         >
-          X
+          <Icon
+            path={mdiDeleteOutline}
+            size={1}
+            style={{ pointerEvents: 'none' }}
+          />
         </button>
       </div>
     </div>
@@ -32,13 +51,19 @@ const ListItem = ({
   onShow,
   onRemove,
   onHide,
+  hidden,
 }) => {
   return (
     <div className="item" id={id} onClick={onShow}>
       {isActive ? (
         children
       ) : (
-        <Item title={name} onRemove={onRemove} onHide={onHide} />
+        <Item
+          title={name}
+          onRemove={onRemove}
+          onHide={onHide}
+          hidden={hidden}
+        />
       )}
     </div>
   );
