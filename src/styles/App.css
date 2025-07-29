@@ -82,20 +82,25 @@
 
 /* item form */
 .edit-section > .item {
-  padding: 1rem 0.6rem;
+  padding: 1rem 0.5rem;
   border-bottom: 5px solid #eeeeee;
 }
-.edit-section > .item > form > .date-inputs {
+.edit-section > .item > form {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
-.edit-section > .item > form > .date-inputs > .input {
+.edit-section > .item > form > * {
+  grid-column-end: span 2;
   width: 100%;
   min-width: 0;
 }
+.edit-section > .item > form > [class*='date'] {
+  grid-column-end: span 1;
+}
 .edit-section > .item > form > button {
-  margin-top: 1rem;
-  margin-left: 1rem;
+  width: auto;
+  justify-self: center;
+  margin-top: 0.5rem;
 }
 
 /* item entry */

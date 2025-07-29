@@ -28,6 +28,7 @@ const Experience = ({ experienceList, onChange, onAdd, onRemove, onHide }) => {
           }}
         >
           <Input
+            className="company"
             name={'company'}
             value={item.company}
             label={'Company Name'}
@@ -35,29 +36,31 @@ const Experience = ({ experienceList, onChange, onAdd, onRemove, onHide }) => {
             onChange={onChange}
           />
           <Input
+            className="position"
             name={'position'}
             value={item.position}
             label={'Position'}
             placeHolder={'Enter job title'}
             onChange={onChange}
           />
-          <div className="date-inputs">
-            <Input
-              name={'start'}
-              value={item.start}
-              label={'Start Date'}
-              placeHolder={'MM/YYYY'}
-              onChange={onChange}
-            />
-            <Input
-              name={'end'}
-              value={item.end}
-              label={'End Date'}
-              placeHolder={'MM/YYYY'}
-              onChange={onChange}
-            />
-          </div>
           <Input
+            className="start-date"
+            name={'start'}
+            value={item.start}
+            label={'Start Date'}
+            placeHolder={'MM/YYYY'}
+            onChange={onChange}
+          />
+          <Input
+            className="end-date"
+            name={'end'}
+            value={item.end}
+            label={'End Date'}
+            placeHolder={'MM/YYYY'}
+            onChange={onChange}
+          />
+          <Input
+            className="location"
             name={'location'}
             value={item.location}
             label={'Location'}

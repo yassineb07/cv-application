@@ -28,6 +28,7 @@ const Education = ({ educationList, onChange, onAdd, onRemove, onHide }) => {
           }}
         >
           <Input
+            className="school"
             name={'school'}
             value={item.school}
             label={'School'}
@@ -35,29 +36,33 @@ const Education = ({ educationList, onChange, onAdd, onRemove, onHide }) => {
             onChange={onChange}
           />
           <Input
+            className="degree"
             name={'degree'}
             value={item.degree}
             label={'Degree'}
             placeHolder={'Enter Degree'}
             onChange={onChange}
           />
-          <div className="date-inputs">
-            <Input
-              name={'start'}
-              value={item.start}
-              label={'Start Date'}
-              placeHolder={'MM/YYYY'}
-              onChange={onChange}
-            />
-            <Input
-              name={'end'}
-              value={item.end}
-              label={'End Date'}
-              placeHolder={'MM/YYYY'}
-              onChange={onChange}
-            />
-          </div>
+
           <Input
+            className="start-date"
+            name={'start'}
+            value={item.start}
+            label={'Start Date'}
+            placeHolder={'MM/YYYY'}
+            onChange={onChange}
+          />
+          <Input
+            className="end-date"
+            name={'end'}
+            value={item.end}
+            label={'End Date'}
+            placeHolder={'MM/YYYY'}
+            onChange={onChange}
+          />
+
+          <Input
+            className="location"
             name={'location'}
             value={item.location}
             label={'Location'}

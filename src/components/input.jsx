@@ -1,4 +1,5 @@
 const Input = ({
+  className = '',
   name,
   value,
   type = 'text',
@@ -6,8 +7,9 @@ const Input = ({
   placeHolder,
   onChange,
 }) => {
+  let classAtr = `input ${className}`;
   return (
-    <div className="input">
+    <div className={classAtr}>
       <label htmlFor={name}>{label}</label>
       <input
         id={name}
