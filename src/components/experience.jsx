@@ -64,7 +64,7 @@ const Experience = ({ experienceList, onChange, onAdd, onRemove, onHide }) => {
   });
 
   return (
-    <div className="cv-section">
+    <div className="edit-section">
       <h1>Work Experience</h1>
       {experienceItems}
       <button

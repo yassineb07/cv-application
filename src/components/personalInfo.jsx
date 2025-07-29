@@ -2,7 +2,7 @@ import Input from './input';
 
 const PersonalInfo = ({ values, onChange }) => {
   return (
-    <div className="cv-section">
+    <div className="edit-section">
       <h1>Personal Details</h1>
       <form action="" method="get">
         <Input

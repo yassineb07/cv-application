@@ -64,7 +64,7 @@ const Education = ({ educationList, onChange, onAdd, onRemove, onHide }) => {
   });
 
   return (
-    <div className="cv-section">
+    <div className="edit-section">
       <h1>Education</h1>
       {educationItems}
       <button

@@ -1,10 +1,17 @@
 import Icon from '@mdi/react';
-import { mdiDeleteOutline, mdiEyeOutline, mdiEyeOffOutline } from '@mdi/js';
+import {
+  mdiDeleteOutline,
+  mdiEyeOutline,
+  mdiEyeOffOutline,
+  mdiDragVariant,
+} from '@mdi/js';
 
 const Item = ({ title, onRemove, onHide, hidden }) => {
   return (
     <div className="item-closed">
-      <h2>{title}</h2>
+      <h2>
+        <Icon path={mdiDragVariant} size={1} /> {title}
+      </h2>
       <div className="buttons">
         <button
           onClick={(e) => {
