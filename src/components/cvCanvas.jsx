@@ -6,19 +6,19 @@ import {
   mdiSchoolOutline,
   mdiBriefcaseOutline,
 } from '@mdi/js';
-import CvSection from './cvSection';
+import CanvasSection from './canvasSection';
 
 const CvCanvas = ({ personalInfo, education, experience }) => {
   const educationItems = education.map((item) => {
     return item.hidden ? null : (
-      <div className="item" key={item.id}>
-        <div className="flex-col">
+      <div className="canvas-section-item" key={item.id}>
+        <div>
           <p>
             {item.start} - {item.end}{' '}
           </p>
           <p>{item.location}</p>
         </div>
-        <div className="flex-col">
+        <div>
           <p>{item.school}</p>
           <p>{item.degree}</p>
         </div>
@@ -28,14 +28,14 @@ const CvCanvas = ({ personalInfo, education, experience }) => {
 
   const experienceItems = experience.map((item) => {
     return item.hidden ? null : (
-      <div className="item" key={item.id}>
-        <div className="flex-col">
+      <div className="canvas-section-item" key={item.id}>
+        <div>
           <p>
             {item.start} - {item.end}{' '}
           </p>
           <p>{item.location}</p>
         </div>
-        <div className="flex-col">
+        <div>
           <p>{item.company}</p>
           <p>{item.position}</p>
         </div>
@@ -46,28 +46,29 @@ const CvCanvas = ({ personalInfo, education, experience }) => {
   return (
     <div className="cv-canvas">
       <section className="personal-info">
-        <h1 className="name">{personalInfo.fullName}</h1>
-        <p className="job-title">{personalInfo.position}</p>
-        <div className="info">
-          <p>
-            <Icon path={mdiEmailOutline} size={1} /> {personalInfo.email}
-          </p>
-          <p>
-            <Icon path={mdiPhoneOutline} size={1} /> {personalInfo.phone}
-          </p>
-          <p>
-            <Icon path={mdiMapMarkerOutline} size={1} /> {personalInfo.address}
-          </p>
+        <div className="content-container">
+          <h1 className="name">{personalInfo.fullName}</h1>
+          <h2 className="job-title">{personalInfo.position}</h2>
+          <div className="info">
+            <p className="email">
+              <Icon path={mdiEmailOutline} size={0.8} /> {personalInfo.email}
+            </p>
+            <p className="phone">
+              <Icon path={mdiPhoneOutline} size={0.8} /> {personalInfo.phone}
+            </p>
+            <p className="address">
+              <Icon path={mdiMapMarkerOutline} size={0.8} />{' '}
+              {personalInfo.address}
+            </p>
+          </div>
         </div>
       </section>
-      <CvSection
-        className="education"
+      <CanvasSection
         title={'Education'}
         list={educationItems}
         icon={mdiSchoolOutline}
       />
-      <CvSection
-        className="experience"
+      <CanvasSection
         title={'Work Experience'}
         list={experienceItems}
         icon={mdiBriefcaseOutline}

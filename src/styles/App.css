@@ -42,15 +42,12 @@
   overflow-y: scroll;
   scrollbar-width: thin;
 }
-
 .cv-edit::-webkit-scrollbar {
   width: 15px; /* Width of the entire navigation element */
 }
-
 .cv-edit::-webkit-scrollbar-track {
   background: #fff; /* Color of the track */
 }
-
 .cv-edit::-webkit-scrollbar-thumb {
   background-color: #050c26; /* Thumb color */
   border-radius: 20px; /* Roundness of the thumb */
@@ -139,51 +136,54 @@
 }
 
 .personal-info {
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.4rem;
-  border-bottom: 6px solid black;
+  padding: 2rem 4rem;
+  background-color: rgb(226, 226, 226);
 }
 
-.personal-info > .name {
+.content-container {
+  width: 60%;
+}
+.content-container > h1 {
   margin: 0;
-  font-size: 3rem;
+  font-size: 2.8rem;
+}
+.content-container > h2 {
+  font-size: 1.3rem;
+  font-weight: 400;
 }
 
 .info {
-  align-self: stretch;
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 0.2rem;
 }
 .info > * {
   display: flex;
+  align-items: center;
   gap: 0.2rem;
   font-size: 1.2rem;
 }
-.job-title {
-  font-size: 1.2rem;
+.info > .address {
+  grid-column-end: span 2;
 }
 
-.title {
+.canvas-section {
+  padding: 0 4rem;
+  margin-top: 2rem;
+}
+
+.canvas-section-title {
   display: flex;
+  justify-content: center;
   gap: 0.3rem;
   background-color: rgba(0, 0, 0, 0.068);
 }
 
-.education > .item,
-.experience > .item {
+.canvas-section-item {
   display: flex;
   gap: 3rem;
-  margin-bottom: 0.8rem;
+  padding-top: 0.6rem;
 }
-.flex-col {
+.canvas-section-item > div {
   min-width: 150px;
-}
-
-.education,
-.experience {
-  padding: 0 3rem;
-  margin-top: 2rem;
 }
