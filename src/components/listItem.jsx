@@ -12,7 +12,7 @@ const Item = ({ title, onRemove, onHide, hidden }) => {
       <h2>
         <Icon path={mdiDragVariant} size={1} /> {title}
       </h2>
-      <div className="buttons">
+      <div className="item-closed-buttons">
         <button
           onClick={(e) => {
             e.stopPropagation();

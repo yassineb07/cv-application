@@ -31,7 +31,7 @@
   border-radius: 14px;
 }
 
-/*  cv edit  */
+/*  Cv Edit  */
 
 .cv-edit {
   width: 550px;
@@ -43,7 +43,7 @@
   scrollbar-width: thin;
 }
 .cv-edit::-webkit-scrollbar {
-  width: 15px; /* Width of the entire navigation element */
+  width: 5px; /* Width of the entire navigation element */
 }
 .cv-edit::-webkit-scrollbar-track {
   background: #fff; /* Color of the track */
@@ -54,6 +54,7 @@
   border: 3px solid #050c26; /* Thumb border styling */
 }
 
+/* edit section */
 .edit-section {
   background-color: white;
   padding: 1rem;
@@ -78,6 +79,8 @@
 .edit-section > .item:first-of-type {
   border-top: 5px solid #eeeeee;
 }
+
+/* item form */
 .edit-section > .item {
   padding: 1rem 0.6rem;
   border-bottom: 5px solid #eeeeee;
@@ -95,6 +98,7 @@
   margin-left: 1rem;
 }
 
+/* item entry */
 .item-closed {
   display: flex;
   justify-content: space-between;
@@ -108,23 +112,23 @@
   align-items: center;
   gap: 0.4rem;
 }
-.buttons {
+.item-closed-buttons {
   display: flex;
   gap: 0.2rem;
 }
-.buttons > button {
+.item-closed-buttons > button {
   padding: 0.5rem;
   background-color: #eeeeee83;
 }
-.buttons > button:hover {
+.item-closed-buttons > button:hover {
   background-color: #eeeeee;
   border-color: transparent;
 }
-.buttons > button:focus {
+.item-closed-buttons > button:focus {
   outline-color: transparent;
 }
 
-/* cv canvas  */
+/* Cv Canvas  */
 
 .cv-canvas {
   /* A4 size */
@@ -135,6 +139,7 @@
     rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
+/* personal info section */
 .personal-info {
   padding: 2rem 4rem;
   background-color: rgb(226, 226, 226);
@@ -167,18 +172,17 @@
   grid-column-end: span 2;
 }
 
+/* canvas section */
 .canvas-section {
   padding: 0 4rem;
   margin-top: 2rem;
 }
-
 .canvas-section-title {
   display: flex;
   justify-content: center;
   gap: 0.3rem;
   background-color: rgba(0, 0, 0, 0.068);
 }
-
 .canvas-section-item {
   display: flex;
   gap: 3rem;
