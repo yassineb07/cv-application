@@ -68,6 +68,18 @@
   padding: 1rem 0.6rem;
   border-bottom: 5px solid #eeeeee;
 }
+.edit-section > .item > form > .date-inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.edit-section > .item > form > .date-inputs > .input {
+  width: 100%;
+  min-width: 0;
+}
+.edit-section > .item > form > button {
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
 
 .item-closed {
   display: flex;
