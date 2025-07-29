@@ -35,9 +35,26 @@
 
 .cv-edit {
   width: 550px;
+  height: 297mm;
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+}
+
+.cv-edit::-webkit-scrollbar {
+  width: 15px; /* Width of the entire navigation element */
+}
+
+.cv-edit::-webkit-scrollbar-track {
+  background: #fff; /* Color of the track */
+}
+
+.cv-edit::-webkit-scrollbar-thumb {
+  background-color: #050c26; /* Thumb color */
+  border-radius: 20px; /* Roundness of the thumb */
+  border: 3px solid #050c26; /* Thumb border styling */
 }
 
 .edit-section {
